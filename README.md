@@ -1,5 +1,3 @@
-Here’s a README.md for your prismaAccelerate testing repository. It covers the purpose of the repo, setup instructions, running tests, and next steps.
-
 Prisma Accelerate Testing
 
 This repository is designed for testing Prisma Accelerate with a Node.js Express API. It provides an isolated environment to verify database interactions, caching behavior, and API responses using Supertest and Jest.
@@ -61,14 +59,3 @@ Tests are located in the /tests folder and use Jest + Supertest.
 Current Tests
 
 ✅ GET /projects - Fetches all projects
-
-🔍 Next Steps
-	•	Add more test cases for POST, PATCH, DELETE operations.
-	•	Implement caching behavior validation.
-	•	Automate testing in GitHub Actions.
-
-📜 License
-
-This project is under the MIT License.
-
-Let me know if you need any modifications! 🚀
