@@ -1,5 +1,6 @@
 import express from "express";
 import { PrismaClient } from "@prisma/client";
+import http from "http";
 
 const app = express();
 const prisma = new PrismaClient();
@@ -124,8 +125,18 @@ app.delete("/projects/:id", async (req, res) => {
   }
 });
 
-// Start the server
-const PORT = 3001;
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-});
+
+const PORT = process.env.PORT || 3001;
+
+// Create the HTTP server instance
+const server = http.createServer(app);
+
+// Start server if not in test mode
+if (process.env.NODE_ENV !== "test") {
+  server.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
+  });
+}
+
+// Export both app and server for testing
+export { app, server };
